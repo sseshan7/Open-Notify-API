@@ -8,16 +8,11 @@ package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.11"
-click = "6.6"
-flask = "0.11.1"
-gunicorn = "19.6.0"
-itsdangerous = "0.24"
-jinja2 = "2.8"
-markupsafe = "0.23"
-newrelic = "2.66.0.49"
-pyephem = "3.7.6.0"
-redis = "2.10.5"
-werkzeug = "0.11.10"
+click = "^8.1.7"
+flask = "^3.0.3"
+gunicorn = "^23.0.0"
+pyephem = "^9.99"
+redis = "^5.0.8"
 
 
 [build-system]
