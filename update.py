@@ -1,6 +1,6 @@
 import redis
 import json
-import urllib2
+import requests
 import datetime
 from calendar import timegm
 import time
@@ -10,16 +10,16 @@ import sys
 REDIS_URL = os.getenv('REDISTOGO_URL', 'redis://localhost:6379')
 r = redis.StrictRedis.from_url(REDIS_URL)
 
-# NASA's station FDO updates this page with very precise data. Only using a
-# small bit of it for now.
-url = "http://spaceflight.nasa.gov/realdata/sightings/SSapplications/Post/JavaSSOP/orbit/ISS/SVPOST.html"
+# using a new URL that is still active to get ISS TLE data
+# another URL that has all data I need:
+# url = "https://tle.ivanstanojevic.me/api/tle/25544/propagate"
+url = "http://live.ariss.org/iss.txt"
 
 
 def update_tle():
     # Open a http request
-    req = urllib2.Request(url)
-    response = urllib2.urlopen(req)
-    data = response.read()
+    response = requests.get(url)
+    data = response.content.decode("ascii").strip()
 
     # parse the HTML
     data = data.split("<PRE>")[1]

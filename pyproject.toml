@@ -13,6 +13,7 @@ flask = "^3.0.3"
 gunicorn = "^23.0.0"
 pyephem = "^9.99"
 redis = "^5.0.8"
+requests = "^2.32.3"
 
 
 [build-system]
