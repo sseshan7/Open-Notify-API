@@ -1,4 +1,6 @@
 *.py[cod]
+.venv
+.python-version
 
 # C extensions
 *.so
