@@ -219,25 +219,6 @@ def iss_pass():
     return dict({"message": "success"}, **d), 200
 
 
-################################################################################
-# Current People In Space
-################################################################################
-@app.route("/astros.json")
-@app.route("/astros/")
-@app.route("/astros/v1/")
-@jsonp
-@json
-def astros():
-    Astros = [
-        {'name': "Jing Haipeng",            'craft': "Shenzhou 11"},
-        {'name': "Chen Dong",               'craft': "Shenzhou 11"},
-        {'name': "Sergey Rizhikov",         'craft': "ISS"},
-        {'name': "Andrey Borisenko",        'craft': "ISS"},
-        {'name': "Shane Kimbrough",         'craft': "ISS"},
-    ]
-    return {'message': "success", 'number': len(Astros), 'people': Astros}, 200
-
-
 if __name__ == "__main__":
     app.debug = True
     app.run()

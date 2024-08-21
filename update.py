@@ -65,9 +65,9 @@ def update_tle():
 
 
 if __name__ == '__main__':
-    print "Updating ISS TLE from JSC..."
+    print("Updating ISS TLE from JSC...")
     try:
         update_tle()
     except:
         exctype, value = sys.exc_info()[:2]
-        print "Error:", exctype, value
+        print("Error:", exctype, value)
